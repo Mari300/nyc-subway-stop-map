@@ -2,23 +2,25 @@ $( document ).ready(function()
     {
         $("#submitButton").click(function()
         {
+           var Sstop1 = $("#FranlinAv").val();
+           var Sstop2 = $("#UticaAv").val();
+           var Sstop3 = $("#BoroughHall").val();
             // 1. Get the value of the subway stop IDs from the input field
             // HINT: Use ClickHandlers
-            
-            
+          
             
             // 2. Make API call to Subway API to get the Stop Info - (mtaapi.herokuapp.com/stop)
             //    Save the stop name
             //    Save the latitude and longitude in the format lat,lon (example: 40.752769,-73.979189)
             //    Repeat this exercise 3 times to get name and coordinates for Stop 1, 2 and 3
             var stop1Obj = $.getJSON(
-                    "URL",
+                    "http://mtaapi.herokuapp.com/stop?id=" + Sstop1,
                     function(response) {
                         return response;
                     }
                 );
-            var stop1Name = "...";
-            var stop1Coordinates = "...";
+            var stop1Name = ;
+            var stop1Coordinates = "result.lat";
                 // Repeat this for Stop 2 and 3
 
             
@@ -29,7 +31,9 @@ $( document ).ready(function()
                 
                 
                 
-            
+            var stop1Co = "40.670682, -73.958131"
+            var stop2Co = "40.668897, -73.932942"
+            var stop3Co = "40.693219, -73.989998"
             // 4. Build the Google Maps API Path using the information gathered in step 2.
             //  HINT: Substitute the coordinates with VARIABLES
             //  EXAMPLE: 
